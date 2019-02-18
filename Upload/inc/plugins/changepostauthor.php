@@ -59,7 +59,6 @@ function changepostauthor_activate()
     global $changePostAuthor;
 
     return $changePostAuthor->_activate();
-
 }
 
 function changepostauthor_deactivate()
@@ -223,10 +222,10 @@ class ChangePostAuthor
         $this->_info();
 
         if (!isset($plugins['changepostauthor'])) {
-            $plugins['changepostauthor'] = plugin_info['versioncode'];
+            $plugins['changepostauthor'] = $this->_info['versioncode'];
         }
 
-        $plugins['changepostauthor'] = plugin_info['versioncode'];
+        $plugins['changepostauthor'] = $this->_info['versioncode'];
         $mybb->cache->update('juliens_plugins', $plugins);
 
         require_once MYBB_ROOT . 'inc/adminfunctions_templates.php';
